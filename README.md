@@ -2,8 +2,6 @@
 
 Multi-model **concilium** (debate council) for [Cursor](https://cursor.com): GPT, Opus, Composer and other models argue through a 6-step protocol via the Cursor SDK, with an optional in-chat Task fallback.
 
-Мультимодельный **консилиум** для [Cursor](https://cursor.com): GPT, Opus, Composer и другие модели проходят 6-шаговый протокол дебата через Cursor SDK, с fallback через in-chat Task.
-
 **Community:** [Q&A Discussions](https://github.com/0xcd03/cursor-consilium-skill/discussions/categories/q-a) · [Releases](https://github.com/0xcd03/cursor-consilium-skill/releases)
 
 ---
@@ -115,6 +113,10 @@ See [`SKILL.md`](SKILL.md) for the complete agent protocol, Task limitations, an
 ---
 
 ## Русский
+
+Мультимодельный **консилиум** для [Cursor](https://cursor.com): GPT, Opus, Composer и другие модели проходят 6-шаговый протокол дебата через Cursor SDK, с fallback через in-chat Task.
+
+**Сообщество:** [Q&A Discussions](https://github.com/0xcd03/cursor-consilium-skill/discussions/categories/q-a) · [Releases](https://github.com/0xcd03/cursor-consilium-skill/releases)
 
 ### Что это
 

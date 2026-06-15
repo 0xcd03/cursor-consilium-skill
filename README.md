@@ -4,6 +4,8 @@ Multi-model **concilium** (debate council) for [Cursor](https://cursor.com): GPT
 
 Мультимодельный **консилиум** для [Cursor](https://cursor.com): GPT, Opus, Composer и другие модели проходят 6-шаговый протокол дебата через Cursor SDK, с fallback через in-chat Task.
 
+**Community:** [Q&A Discussions](https://github.com/0xcd03/cursor-consilium-skill/discussions/categories/q-a) · [Releases](https://github.com/0xcd03/cursor-consilium-skill/releases)
+
 ---
 
 ## English

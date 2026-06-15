@@ -1,0 +1,3 @@
+# Secrets and installed deps — never commit
+scripts/.env.local
+scripts/node_modules/

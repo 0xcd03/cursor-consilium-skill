@@ -13,7 +13,11 @@ Multi-model **concilium** (debate council) for [Cursor](https://cursor.com): GPT
 - Runs a structured multi-model debate: initial proposals → 3 critique rounds → final positions → moderator synthesis.
 - **SDK mode** (recommended for GPT-5.5, Opus, etc.): `scripts/concilium.mjs` with `CURSOR_API_KEY`.
 - **In-chat Task mode**: only `composer-2.5-fast` subagents; uses role-based perspectives (advocate / skeptic / pragmatist).
-- Trigger in Cursor chat: `проведи консилиум …` or `concilium …`
+- Trigger in Cursor chat (RU or EN), e.g.:
+  - `проведи консилиум GPT-5.5 и Opus 4.8: …`
+  - `run concilium with GPT-5.5 and Opus 4.8: …`
+  - `concilium: Redis or in-memory TTL?`
+  - `консилиум: Redis или in-memory?`
 
 ### Requirements
 
@@ -115,7 +119,11 @@ See [`SKILL.md`](SKILL.md) for the complete agent protocol, Task limitations, an
 - Структурированный мультимодельный дебат: начальные предложения → 3 раунда критики → финальные позиции → синтез модератора.
 - **Режим SDK** (для GPT-5.5, Opus и др.): скрипт `scripts/concilium.mjs` + `CURSOR_API_KEY`.
 - **Режим in-chat Task**: только subagent `composer-2.5-fast`; роли advocate / skeptic / pragmatist.
-- Триггер в чате Cursor: `проведи консилиум …` или `concilium …`
+- Триггер в чате Cursor (RU или EN), например:
+  - `проведи консилиум GPT-5.5 и Opus 4.8: …`
+  - `run concilium with GPT-5.5 and Opus 4.8: …`
+  - `concilium: Redis or in-memory TTL?`
+  - `консилиум: Redis или in-memory?`
 
 ### Требования
 

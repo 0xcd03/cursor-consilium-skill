@@ -1,14 +1,54 @@
 ---
 name: concilium-skill
 description: >-
-  Multi-model concilium (package ~/.cursor/skills/consilium-skill). Cursor Task
-  subagents ONLY support composer-2.5-fast (verify via Task error if list changes);
-  for GPT-5.5/Opus use scripts/concilium.mjs with CURSOR_API_KEY. Never curl,
-  env grep, or claude CLI — except bash setup.sh reads .env.local locally.
-  Triggers: проведи консилиум, concilium.
+  Multi-model concilium (package ~/.cursor/skills/consilium-skill). Activate when
+  user asks for concilium/консилиум in Russian OR English (see Triggers section).
+  Cursor Task subagents ONLY support composer-2.5-fast; for GPT-5.5/Opus use
+  scripts/concilium.mjs with CURSOR_API_KEY. Never curl, env grep, or claude CLI
+  — except bash setup.sh reads .env.local locally.
 ---
 
 # Concilium
+
+## Триггеры / Triggers
+
+**Активируй этот skill**, если сообщение пользователя содержит **любой** из паттернов ниже (RU или EN), даже вперемешку с моделями и вопросом.
+
+### Русский
+
+| Паттерн | Пример |
+|---------|--------|
+| `консилиум` | «консилиум: Redis или in-memory?» |
+| `проведи консилиум` | «проведи консилиум GPT и Opus» |
+| `запусти консилиум` | «запусти консилиум по архитектуре кэша» |
+| `организуй консилиум` | «организуй консилиум из 3 моделей» |
+| `сделай консилиум` | «сделай консилиум Composer + Opus» |
+| `мультимодельный консилиум` | «мультимодельный консилиум: …» |
+| `совет моделей` | «совет моделей — что выбрать?» |
+
+Регистр не важен. Допустимы варианты: «Консилиум», «КОНСИЛИУМ».
+
+### English
+
+| Pattern | Example |
+|---------|---------|
+| `concilium` | «concilium: Redis vs in-memory?» |
+| `run concilium` | «run concilium with GPT and Opus» |
+| `start concilium` | «start concilium on cache architecture» |
+| `hold a concilium` | «hold a concilium with 3 models» |
+| `multi-model concilium` | «multi-model concilium: …» |
+| `model council` | «model council — which option?» |
+| `debate council` | «debate council GPT vs Opus» |
+
+Case-insensitive.
+
+### Что извлечь из запроса
+
+1. **Модели** — имена из UI (GPT-5.5, Opus 4.8, Composer 2.5, …) или slug’и.
+2. **Вопрос** — всё после двоеточия, тире или глагола-триггера; отвечай на **том же языке**, что и вопрос.
+3. Если модели не указаны — уточни одним вопросом или предложи дефолт (2 дебатёра + модератор из `--list-models`).
+
+**Не активируй** при случайном упоминании «council» вне контекста AI-дебата (например «security council» в доменной документации) — смотри намерение: мультимодельный дебат в Cursor.
 
 ## Расположение
 
@@ -194,10 +234,16 @@ Final decision | Consensus | Resolved conflicts | Open risks
 - [ ] «Решение консилиума»
 - [ ] GPT/Opus — SDK или явный режим перспектив
 
-## Пример
+## Примеры / Examples
 
+**RU:**
 ```
 проведи консилиум composer 2.5, GPT-5.5 и Opus 4.8: Redis или in-memory TTL?
+```
+
+**EN:**
+```
+run concilium with Composer 2.5, GPT-5.5 and Opus 4.8: Redis or in-memory TTL?
 ```
 
 → объясни: 2 дебатера + Composer модератор (`--models gpt-5.5,claude-opus-4-8 --moderator composer-2.5`); все три в дебате — только с 4-й моделью-модератором.
